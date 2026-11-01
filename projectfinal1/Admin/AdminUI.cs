@@ -83,21 +83,22 @@ namespace projectfinal1.Admin
         }
 
         public void CheckUsername()
+        {
+            Console.WriteLine("Enter Username:");
+            string username = Console.ReadLine();
+
+            if (service.CheckAdminExists(username))
             {
-                Console.WriteLine("Enter Username:");
-                string username = Console.ReadLine();
-
-                bool exists = service.CheckAdminExists(username);
-
-                if (exists)
-                {
-                    Console.WriteLine("Username already Exists..!");
-                }
-                else
-                {
-                    Console.WriteLine("Username Available....!");
-                }
+                Console.WriteLine("Username Already Exists!");
             }
+            else
+            {
+                Console.WriteLine("Username Available!");
+            }
+
+            Console.ReadKey();
+        }
+           
 
             public AdminModel TakeInput()
             {

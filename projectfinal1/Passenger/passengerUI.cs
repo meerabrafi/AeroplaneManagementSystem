@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace projectfinal1.Passenger
@@ -49,7 +50,17 @@ namespace projectfinal1.Passenger
                 }
                 else if (option == "9")
                 {
-                   
+
+                    pagesUI();
+
+
+                }
+                else if (option == "10")
+                {
+                    quickFilter();
+                }
+                else if ( option == "11")
+                {
                     break;
                 }
             }
@@ -157,12 +168,40 @@ namespace projectfinal1.Passenger
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
+        public void pagesUI()
+        {
+
+
+            Console.WriteLine("  How many records to show on one page : !");
+            int records = int.Parse(Console.ReadLine());
+            Console.WriteLine(" Please enter N  for the next page  :");
+            char ch = char.Parse(Console.ReadLine());
+            Console.WriteLine(" Please Enter P for the previous page: ");
+            char ch1 = char.Parse(Console.ReadLine());
+            Console.WriteLine(" Please Enter P for the previous page: ");
+            char ch2 = char.Parse(Console.ReadLine());
+            Console.WriteLine(" Please Enter L for the Last page : ");
+            char ch3 = char.Parse(Console.ReadLine());
+            Console.WriteLine(" Enter X to exit : ");
+            char ch4 = char.Parse(Console.ReadLine());
+            if (service.pagecontent(int count ))
+            {
+                Console.WriteLine(" Total records is 12");
+
+            }
+        }
+        public void quickfilter()
+        {
+            service.quickFilter();
+            }
+          
+       
 
         public void BacktoMainMenu()
         {
             service.BacktoMainMenu();
         }
-
+         
         public PassengerModel TakeInput()
         {
             Console.Write("Enter Name: ");
@@ -197,7 +236,10 @@ namespace projectfinal1.Passenger
             Console.WriteLine(" 6. Show Total Passengers");
             Console.WriteLine(" 7. Count Male and Female Passengers");
             Console.WriteLine(" 8. Reset Database");
-            Console.WriteLine(" 9. Back to Main Menu");
+            Console.WriteLine(" 9.-------Paginated view ------- ");
+            Console.WriteLine("10 quick filter  ");
+            Console.WriteLine(" 11. Back to Main Menu");
+            
             Console.Write("Enter your choice: ");
             Console.ForegroundColor = ConsoleColor.White;
             string option = Console.ReadLine();

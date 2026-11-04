@@ -62,6 +62,7 @@ namespace projectfinal1.Booking
 
             return false;
         }
+            
         public List<BookingModel> GetConfirmedBookings()
         {
             List<BookingModel> bookings = _repo.GetBookingsFromFile();

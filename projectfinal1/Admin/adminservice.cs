@@ -25,6 +25,7 @@ namespace projectfinal1.Admin
         }
         public AdminModel SearchById(int admin_id)
         {
+            List<AdminModel> admins = _repo.GetAdminsFromFile();
             foreach (AdminModel admin in _repo.GetAdminsFromFile())
             {
                 if (admin.GetAdminId() == admin_id)
@@ -38,7 +39,8 @@ namespace projectfinal1.Admin
 
            public bool CheckAdminExists(string Username)
             {
-                foreach (AdminModel admin in _repo.GetAdminsFromFile())
+            List<AdminModel> admins = _repo.GetAdminsFromFile();
+            foreach (AdminModel admin in _repo.GetAdminsFromFile())
                 {
                     if (admin.GetUsername() == Username)
                     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Text;
 
 namespace projectfinal1.Passenger
@@ -59,7 +60,7 @@ namespace projectfinal1.Passenger
                 if (passenger.GetPassportNumber() == passportNumber)
                 {
                     passenger.SetName(name);
-
+ 
                     _repo.SaveAllDataIntoFile(passengers);
                     return true;
                 }
@@ -112,6 +113,7 @@ namespace projectfinal1.Passenger
             Console.WriteLine(" Male " + male);
             Console.WriteLine(" Female " + female);
         }
+
        
         public void resetDatabase()
         {
@@ -120,6 +122,52 @@ namespace projectfinal1.Passenger
 
 
         }
+        public void pages(int records, char ch, char ch2, char ch3, char ch4)
+        {
+
+            Console.WriteLine("Executed sucessfully");
+
+
+
+
+        else {
+               Console.WriteLine("not Executed sucessfully");
+               Console.ReadKey();
+
+
+           }
+       }
+        
+        
+     
+        public void pagecontent (int count)
+        {
+            List<PassengerModel> passengers = _repo.GetPassengersFromFile();
+            if (passengers.Count > 1)
+            {
+                Console.WriteLine(" Open the next page .");
+
+
+
+            }
+        }
+        public void quickFilter( )
+        {
+
+           List<PassengerModel> passengers = _repo.GetPassengersFromFile();
+            foreach (PassengerModel passenger in _repo.GetPassengersFromFile())
+               if (passenger. GetSeatPreference() == " middle " && passenger.GetAge() > 20)
+           {
+                    Console.WriteLine("SeatPreference " + passenger.GetSeatPreference() + " Age " + passenger.GetAge());
+
+
+
+
+
+        //    }
+
+                    //}
+
         public string BacktoMainMenu()
         {
             return "0";

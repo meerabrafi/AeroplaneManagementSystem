@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace projectfinal1.Admin
-{
+namespace projectfinal1.Admin {
     internal class AdminModel
     {
-        private int AdminId;
+        private int AdminId;  
         private string Username;
         private string Password;
         public AdminModel(int AdminId,
@@ -49,3 +48,4 @@ namespace projectfinal1.Admin
         }
     }
 }
+\

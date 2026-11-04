@@ -11,12 +11,11 @@ namespace projectfinal1.Passenger
         private int age;
         private string gender;
         private string passportNumber;
-        private int flight_no;
-        private string destination;
-        private float ticket_price;
+
         private string seat_preference;
         private string meal_preference;
-        private string travel_class;
+       
+       
         public PassengerModel()
         {
 
@@ -72,6 +71,12 @@ namespace projectfinal1.Passenger
         {
             this.seat_preference= seat_preference;
         }
+        public string GetSeatPreference ()
+        {
+            return this.seat_preference ;
+        }
+
+
         public void SetMealPreference(string meal_preference)
         {
             this.meal_preference= meal_preference;
